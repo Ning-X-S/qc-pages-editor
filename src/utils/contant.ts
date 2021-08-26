@@ -12,5 +12,5 @@ export const componentsList: Array<componentItem> = [
         componentName: 'Button',
         componentStyle: {},
         componentProps: {}
-    },
+    }
 ];

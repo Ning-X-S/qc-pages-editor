@@ -6,10 +6,10 @@ import { componentItem, componentsList } from './utils/contant';
 import { Button, Text } from 'nxs-ui';
 
 
-function App() {
+function App(): React.ReactElement {
 
     const [componentsArr, setComponentsArr]: [Array<componentItem>, Function] = useState([]);
-    const [jsxDom, setJsxDom] = useState('');
+    const [jsxDom, setJsxDom]: [string, Function] = useState('');
 
     useEffect(() => {
         setComponentsArr(componentsList);
@@ -34,7 +34,7 @@ function App() {
         // 根据上面制定的结构来解析iframe内部发回来的数据
         const cmd: { [key: string]: Function } = {
             changePageInfo: () => {
-                console.log(params);
+                console.log(JSON.parse(params));
                 setComponentsArr(JSON.parse(params));
             }
         };
